@@ -24,14 +24,20 @@ public class MainPageController {
     public String mainPage(Model model){
         model.addAttribute("bookData", bookService.getBooksData());
         model.addAttribute("searchPlaceholder", "new search placeholder");
-        return "main_page";
+        return "main";
     }
 
 
     @GetMapping("/genres")
     public String genresPage() {
 
-        return "genres_page";
+        return "genres";
+    }
+
+    @GetMapping("/authors")
+    public String authorsPage() {
+
+        return "authors";
     }
 
 
