@@ -29,6 +29,21 @@
   <link rel="stylesheet" href="/assets/css/extra.min.css?v=64223515"><!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script defer src="/assets/js/scripts.min.js?v=64223515"></script>
+<!--  подключение скрипта библиотеки jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function (){
+      $("#locales").change(function (){
+        var selectedOption = $("#locales").val();
+        if(selectedOption != ''){
+          window.location.replace('?lang='+selectedOption);
+        }
+      });
+    });
+  </script>
+
 </head>
 <body class="Site">
   <!--if lt IE 8
@@ -659,6 +674,14 @@
             <li class="menu-item"><a class="menu-link" href="/faq.html">Помощь</a>
             </li>
             <li class="menu-item"><a class="menu-link" href="/contacts.html">Контакты</a>
+            </li>
+            <li class="menu-item">
+              <span>Выбор языка</span>
+              <select id="locales">
+                <option value=""></option>
+                <option value="en">English</option>
+                <option value="ru">Russian</option>
+              </select>
             </li>
           </ul>
         </div>
