@@ -68,7 +68,7 @@
               <div class="search">
                 <form class="form form_search" action="#" method="post" data-searchlimit="20">
                   <input class="search-input" id="query" name="query" type="text"
-                         th:placeholder="#{searchbar.placeholder}"
+                         th:placeholder="#{${messageTemplate}(${serverTime}, #{searchbar.placeholderTextPart1},${placeholderTextPart2})}"
                          placeholder="Search over 30 million book titles" value=""/>
                   <button class="search-button" type="submit" name="search" id="search">Поиск
                   </button>
@@ -125,7 +125,7 @@
                     <div class="Card-content">
                       <strong class="Card-title" th:text="${book.title}"><a href="/books/slug.html">Техника</a>
                       </strong>
-                      <div class="Card-description" th:text="${book.author}">Кондратенко Валерий Петрович
+                      <div class="Card-description" th:text="${book.author.toUpperCase()}">Кондратенко Валерий Петрович
                       </div>
                       <div class="Card-cost"><span class="Card-priceOld" th:text="${book.priceOld}">₽300.00</span><span class="Card-price" th:text="${book.price}">₽190.00</span>
                       </div>
