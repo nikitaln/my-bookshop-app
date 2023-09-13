@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Контроллер главной страницы
+ */
+
+
 @Controller
 @RequestMapping("/bookshop")
 public class MainPageController {
@@ -29,7 +34,8 @@ public class MainPageController {
         model.addAttribute("searchPlaceholder", "new search placeholder");
         model.addAttribute("serverTime", new SimpleDateFormat("hh:mm:ss").format(new Date()));
         model.addAttribute("placeholderTextPart2", "SERVER");
-        model.addAttribute("messageTemplate", "searchbar.placeholder");
+        model.addAttribute("messageTemplate", "searchbar.placeholder2");
+
         return "main";
     }
 
